@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+html{
+    font-size:62.5%,
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    background-color: #121212;
+    width:100vw;
+    height:100vh;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: capitalize;
+}
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-thumb {
+  width: 1.5rem;
+  border-radius: 1rem;
+  background-clip: padding-box;
+  border: 0.5rem solid transparent;
+}
+*::-webkit-scrollbar-thumb {        
+  box-shadow: inset 0 0 0 1rem;
+  color: #474747;
+}
+
+.mostpop{
+    display: flex;
+    overflow-x: scroll;
+  width: 100%;
+    scroll-behavior:smooth;
+}
+
+.mostpop::-webkit-scrollbar {
+    width: 0.8rem;
+   height: 0.5rem;
+   margin-top: 1rem;
+    margin-top: 1rem; 
+    padding: 5rem;
+  }
+
+.mostpop::-webkit-scrollbar-track {
+    visibility:hidden;
+    -webkit-transition: all 5s ease-in-out;
+    transition: all 5s ease-in-out;
+    background-color: none;
+  }
+
+.mostpop::-webkit-scrollbar-thumb {
+    background-color: #474747;
+    border-radius: 0.5rem;
+    border: 0.3rem none #ffffff;
+    visibility:hidden;
+    
+  }
+  .mostpop:hover::-webkit-scrollbar-track {
+    visibility:visible;
+}
+.mostpop:hover::-webkit-scrollbar-thumb {
+    visibility:visible;
+}
+
+
+
+.a{
+    background-color:#1e88e5;
+    padding: 0.2rem 0.5rem;
+    width: 40%;
+text-align: center;
+    border-radius: 0.1rem;
+    letter-spacing: 0.2rem;
+}
+.maincon{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.man{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  
+}
+.drwer{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  
+}
+
+.video{
+  width: 100%;
+  heiht: 80rem;
+  background-color: red;
+  /* clip-path: url(#clip); */
+  position: relative;
+  
+  tranform:translate(-369.87 -247.54)
+  
+}
+
+video{
+  width: 90vw;
+  height: 30rem;
+  margin: auto;
+  display: flex;
+  backgrond-color: #1e88e5;
+  justify-content: center;
+  align-items: center;
+  clip-path:path("M304.54,46.12q-16.46-7.34-39.18-7.34H189.61V204.5h46.87V161.18h28.88q22.74,0,39.18-7.46T330,132.53q9-13.73,9-32.43,0-18.93-9-32.79T304.54,46.12Zm-20.12,71.74q-7.21,6.39-21.9,6.39h-26V75.72h26q14.69,0,21.9,6.39t7.22,18Q291.64,111.47,284.42,117.86ZM76.92,168.28h86.64V204.5h-133V38.78h130V75H76.92v27.93h73.62v35H76.92ZM566,149.58l29.83,27a81.05,81.05,0,0,1-30.19,23.08q-18.1,8.17-41.07,8.17a102.51,102.51,0,0,1-36.34-6.27,84.54,84.54,0,0,1-28.89-17.88,83.11,83.11,0,0,1-19.05-27.34,85.83,85.83,0,0,1-6.87-34.69A85.81,85.81,0,0,1,440.32,87a83.11,83.11,0,0,1,19.05-27.34,84.69,84.69,0,0,1,28.89-17.88,102.51,102.51,0,0,1,36.34-6.27q22.95,0,41.07,8.05a79,79,0,0,1,30.19,23.2L566,93.71a58.85,58.85,0,0,0-17.64-14.44,45.75,45.75,0,0,0-21.42-5,51.19,51.19,0,0,0-18.71,3.31A40.16,40.16,0,0,0,493.7,87.2a45.21,45.21,0,0,0-9.47,15,52.75,52.75,0,0,0-3.43,19.41,52.77,52.77,0,0,0,3.43,19.42,45.21,45.21,0,0,0,9.47,15,40.16,40.16,0,0,0,14.56,9.59A51.19,51.19,0,0,0,527,169a45.75,45.75,0,0,0,21.42-5A58.85,58.85,0,0,0,566,149.58ZM361.72,38.78H408.6V204.5H361.72Z")
+}
+svg{
+  margin: auto;
+}
+
+.backcon{
+  background-image: url("https://www.xgn.nl/images/articles/2021/202101/_1280x720_crop_center-center_82_line/4509799/Still-Image_Xbox-Game-Pass_2_EA-Play-Title-Cards.f1620123579.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.backcon:before{
+  content: "";
+position: absolute;
+width: 100%;
+height: 100%;
+background-image: linear-gradient(310deg, #121212 ,#121212e7 ,#121212ba , rgba(255, 255, 0, 0));
+  
+}
+
+.browsecon{
+  background-color: red;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sortcon{
+  background-color: red;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1999;
+}
+.slick-slide{
+  overflow: hidden;
+}
+
+.slick-slide img{
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+.imgslider{
+  width: 100%;
+  display: flex;
+  margin: 1rem 0 1rem 0;
+}
+.slick-slider,.slick-initialized{
+  width:80%;
+  justify-content: center;
+  margin: auto;
+}
+.overcon{
+  position: relative;
+}
+.overlay{
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background: rgb(2,0,36);
+background: linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(18,18,18,0.1) 0%, rgba(18,18,18,1) 100%);
+  position: absolute;
+  transition: all 5s ease-in-out;
+  transition: all 3s ease-in-out;
+}
+.overlay:hover{
+  background: linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(18,18,18,0.5) 0%, rgba(18,18,18,1) 100%);
+}
+.overlay2{
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background: rgb(2,0,36);
+background: linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(18,18,18,0.1) 0%, rgba(18,18,18,1) 100%);
+  position: absolute;
+  transition: all 5s ease-in-out;
+  transition: all 3s ease-in-out;
+}
+.allcon{
+  position: relative;
+}
+button::before {
+  color: white;
+}
+.slick-active button::before{
+  color: white;
+  opacity: 1;
+}
+
+
+@media only screen and (max-width: 500px) {
+    html{
+        font-size: 8px
+    }
+  }
+  @media only screen and (max-width: 840px) and (min-width:500px) {
+    html{
+        font-size: 10px
+    }
+    
+  }
+  @media only screen and (min-width:840px){
+    .slick-slider,.slick-initialized{
+      width:55%;
+      justify-content: center;
+      margin: auto;
+    }
+  }
