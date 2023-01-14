@@ -4,7 +4,7 @@ import { Stack, Typography,Skeleton,Box, IconButton } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Card } from "../Components/Context"
 import { useNavigate } from 'react-router-dom';
-// import SideScroll from "../Components/SideScroll"
+import SideScroll from "../Components/SideScroll"
 
 export default function MostPop({condition,tag}) {
     const { isloading,setisloading } = useContext(Card);
@@ -14,7 +14,7 @@ export default function MostPop({condition,tag}) {
         setisloading(true)
     },[])
    const navigate=useNavigate()
-    // const scrollRef = SideScroll();
+    const scrollRef = SideScroll();
 
     const mostpopURL=`/api/v1/filter?${condition}=true&limit=10`
     const data=async()=>{
@@ -33,8 +33,8 @@ export default function MostPop({condition,tag}) {
         console.log("if")
         mostpopcards=finaldata.map((card)=>{
             return(
-                // <Skeleton animation="wave" variant="rectangular" sx={{ minWidth: "12rem", height: "18rem", bgcolor: 'grey.900' }}></Skeleton>
-                <Typography>Mohit</Typography>
+                <Skeleton animation="wave" variant="rectangular" sx={{ minWidth: "12rem", height: "18rem", bgcolor: 'grey.900' }}></Skeleton>
+                // <Typography>Mohit</Typography>
                 )
     })}
     else{
@@ -57,7 +57,7 @@ export default function MostPop({condition,tag}) {
     {/* </IconButton> */}
     </Box>
     <Stack spacing={{xs:3,md:5}} direction="row" sx={{overlowX:"auto",pb:"2rem"}} className="mostpop"  >
-        {/* ref={scrollRef} */}
+        ref={scrollRef}
         
         {mostpopcards}
     </Stack>

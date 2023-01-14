@@ -101,7 +101,7 @@ function buynow(id) {
 
 let price=0;
   const display=cartdata.map((item,index)=>{
-    price=price+item.price;
+    // price=price+item.price;
     return(
       <Paper key={index} sx={{display:"flex",justifyContent:"center",alignItems:"center",padding:"1rem 3rem",width:"80vw",gap:"2rem"}}>
     

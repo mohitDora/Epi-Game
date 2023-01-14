@@ -21,7 +21,7 @@ router.post("/api/v1/", async (req, res) => {
         const adddedData = await newgame.save()
         res.status(201).send(adddedData)
     } catch (error) {
-        res.status(401).send(error);
+        res.status(401).send([]);
         console.log(error)
     }
 })
@@ -33,7 +33,7 @@ router.get("/api/v1/", async (req, res) => {
        
         res.status(201).send(getdata)
     } catch (error) {
-        res.status(401).send(error)
+        res.status(401).send([])
     }
 })    
 router.get("/api/v1/name", async (req, res) => {
@@ -45,7 +45,7 @@ router.get("/api/v1/name", async (req, res) => {
         console.log(alllower)
         res.status(201).send(getdata)
     } catch (error) {
-        res.status(401).send(error)
+        res.status(401).send([])
     }
 })
 //get sorted document
@@ -83,7 +83,7 @@ router.get("/api/v1/filter", async (req, res) => {
         }
     } catch (error) {
         console.log(error)
-        res.status(401).send(error)
+        res.status(401).send([])
     }
 })
 
@@ -104,7 +104,7 @@ router.get("/api/v1/search", async (req, res) => {
         }
     } catch (error) {
         console.log(error)
-        res.status(401).send(error)
+        res.status(401).send([])
     }
 })
 
@@ -117,7 +117,7 @@ router.get("/api/v1/:id", async (req, res) => {
         const getdata = await gamelist.findById({ _id })
         res.status(201).send(getdata)
     } catch (error) {
-        res.status(401).send(error)
+        res.status(401).send([])
     }
 })
 
@@ -128,7 +128,7 @@ router.patch("/api/v1/:id", async (req, res) => {
         const getdata = await gamelist.findByIdAndUpdate({ _id }, req.body)
         res.status(201).send(getdata)
     } catch (error) {
-        res.status(401).send(error)
+        res.status(401).send([])
     }
 })
 
@@ -139,7 +139,7 @@ router.delete("/api/v1/:id", async (req, res) => {
         const getdata = await gamelist.findByIdAndDelete({ _id })
         res.status(201).send(getdata)
     } catch (error) {
-        res.status(401).send(error)
+        res.status(401).send([])
     }
 })
 

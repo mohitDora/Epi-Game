@@ -9,7 +9,7 @@ commentRouter.post("/commentpost", async (req, res) => {
         const adddedData = await newgame.save()
         res.status(201).send(adddedData)
     } catch (error) {
-        res.status(401).send(error);
+        res.status(401).send([]);
         console.log(error)
     }
 })
@@ -21,7 +21,7 @@ commentRouter.get("/comment", async (req, res) => {
        
         res.status(201).send(getdata)
     } catch (error) {
-        res.status(401).send(error)
+        res.status(401).send([])
     }
 }) 
 // comment.deleteMany({  }).then(function(){

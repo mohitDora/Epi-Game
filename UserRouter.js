@@ -37,7 +37,7 @@ userRouter.post("/signup", async (req, res) => {
         await user.save();
         res.status(201).json("Game added successfully");
     } catch (error) {
-        res.status(422).json(error)
+        res.status(422).send([])
     }
 })
 
@@ -61,7 +61,7 @@ userRouter.post("/signin", async (req, res) => {
             res.status(422).json("Incorrect credentials")
         }
     } catch (error) {
-        res.status(422).json(error);
+        res.status(422).send([]);
         console.log(error)
     }
 })
@@ -80,7 +80,7 @@ userRouter.get("/logout",Auth,async (req,res)=>{
         res.json("logout")
         res.end()
     } catch (error) {
-        res.status(500).send(error)
+        res.status(500).send([])
     }
 })
 

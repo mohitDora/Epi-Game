@@ -139,9 +139,9 @@ export default function Appbar({ iswidth }) {
                             </div> : ""
                         }
                         <Link to="/">
-                        <IconButton sx={{ width: "3.235rem", height: "3.755rem", display: "flex", justifyContent: "center", alignItems: "center", m: "0.5rem 0" }}>
+                        {/* <IconButton sx={{ width: "3.235rem", height: "3.755rem", display: "flex", justifyContent: "center", alignItems: "center", m: "0.5rem 0" }}> */}
                             <img width="100%" alt="Epic Games logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Epic_Games_logo.svg/512px-Epic_Games_logo.svg.png"></img>
-                        </IconButton>
+                        {/* </IconButton> */}
                         </Link>
                             <FormControl varint="filled" sx={{ ml: "auto", backgrounColor: "red", hight: "3rem" }} >
 

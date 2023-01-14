@@ -30,8 +30,8 @@ console.log(userdetails)
   return (
     <Box sx={{width:"70vw",display:"flex",flexDirection:"column",gap:"2rem",justifyContent:"center",alignItems:"center",margin:"5rem auto"}}>
     <PersonIcon sx={{fontSize:"5rem"}}></PersonIcon>
-    <Typography>Name : {userdetails.username}</Typography>
-    <Typography>Email :{userdetails.email}</Typography>
+    <Typography>Name : {userdetails?.username}</Typography>
+    <Typography>Email :{userdetails?.email}</Typography>
     <Button variant='contained' sx={{'&:hover':{backgroundColor:"red"}}} onClick={logout}>logout</Button>
     {/* <Footer></Footer> */}
     </Box>

@@ -50,7 +50,7 @@ useEffect(()=>{
     })
     setlibrary(newArr)
   }
-
+console.log(libdata.length)
   const dis=libdata.map((item)=>{
     return(
         <Paper key={item._id} sx={{minWidth: {xs:"12rem",sm:"12rem"},maxWidth: {xs:"12rem",sm:"12rem"}, boxShadow: "none",backgroundColor: "none", position: "relative"}} >
@@ -84,12 +84,14 @@ useEffect(()=>{
   })
   
   return (
-    library.length?<Box sx={{display:"flex",width:"90vw",margin:"auto",gap:"2rem",marginTop:"2rem",flexWrap:"wrap",justifyContent:"space-around"}}>
+    <>
+    <Typography sx={{color:"white"}} variant="h3">wishlist</Typography>
+    library?.length?<Box sx={{display:"flex",width:"90vw",margin:"auto",gap:"2rem",marginTop:"2rem",flexWrap:"wrap",justifyContent:"space-around"}}>
     {dis}
     </Box>:<Box sx={{display:"flex",flexDirection:"column",width:"50vw",justifyContent:"center",alignItems:"center",gap:"2rem",margin:"auto",marginTop:"2rem"}}><Typography sx={{color:"white"}}>No item is library</Typography>
     <Button variant='outlined' onClick={()=>navigate("/browse")}>Continue Browsing</Button>
     </Box>
-    
+    </>
   )
 }
 

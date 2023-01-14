@@ -7,7 +7,8 @@ import { useState } from 'react'
 import {Link} from "react-router-dom"
 import { useContext } from 'react';
 import { Card } from '../Components/Context';
-import StripeContainer from '../Components/StripeContainer';
+// import StripeContainer from '../Components/StripeContainer';
+import getStripe from './getStripe';
 
 function Cart() {
   // const { setuserdetails, userdetails } = useContext(Card);
@@ -108,6 +109,35 @@ function deleteID(id){
   setcart(newArr)
 }
 
+
+
+
+
+
+
+async function handleSubmit(){
+  console.log("eee")
+  const stripe=await getStripe();
+  const res=await fetch("create-checkout-session",{
+    method:'POST',
+    headers:{
+      "Content-Type":"application/json"
+    },
+    body:JSON.stringify(cartdata)
+  })
+
+  if(res.statusCode===500) return ;
+  const data=await res.json();
+  stripe.redirectToCheckout({sessionId:data.id})
+}
+
+
+
+
+
+
+
+
 let price=0;
   const display=cartdata.map((item,index)=>{
     price=price+item.price;
@@ -130,13 +160,37 @@ let price=0;
   })
 
   
+  const redirectToCheckout = async event => {
+
+    event.preventDefault()
+
+    const stripe = await getStripe()
+
+    const { error } = await stripe.redirectToCheckout({
+
+      mode: "subscription",
+
+      lineItems: [{ price: "price_1Gva5YAeKYVunD5viRkFzoR7", quantity: 1 }],
+
+      successUrl: `http://localhost:8000/thanks/`,
+
+      cancelUrl: `http://localhost:8000/404`,
+
+    });
+
+    if (error) {
+
+      alert("Error:", error)
+
+    }
+
+  };
+
+
   return (
     <>
-    {showcheckout?
-    <StripeContainer></StripeContainer>
-    :
      
-   ( 
+   
    cart.length?
    <Box sx={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",gap:"2rem",margin:"2rem 0"}}>
       <Typography sx={{color:"white"}} variant="h3">Cart</Typography>
@@ -144,7 +198,7 @@ let price=0;
       <Typography sx={{color:"white"}} variant="h5"> {price?`total price : ${price}`:""}</Typography>
       
     
-      <Button variant='contained' size='large' onClick={() => setcheckout(true)}>Checkout</Button>
+      <Button variant='contained' size='large' onClick={redirectToCheckout}>Checkout</Button>
     </Box>:
     <>
     <Box sx={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",gap:"2rem",margin:"2rem 0"}}>
@@ -154,10 +208,8 @@ let price=0;
     <Button variant='outlined'>Continue Browsing</Button></Link>
     </Box>
     </>
-    )
     
     
-    }
     
     </>
   )

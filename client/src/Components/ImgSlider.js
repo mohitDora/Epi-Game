@@ -30,38 +30,40 @@ function ImgSlider() {
       setisloading(true)
       let response = await fetch(URL);
       let data = await response.json();
-      setisloading(false)
+      
       setSliderData(data[0]);
-
+      setisloading(false)
     } catch (error) {
       console.log(error)
     }
   }
+console.log(sliderData)
 
   return (
     <div className="imgslider">
       {isloading?<Skeleton animation="wave" variant="rectangular" sx={{ width: "90vw", height: "20rem", bgcolor: 'grey.900',margin:"auto" }}></Skeleton>:
       
-      <Slider {...settings}>
-        {sliderData.map((item, index) => {
-          return (
-            <Link to={`/game/${item._id}`} key={index} style={{ textDecoration: 'none' }}>
-            <div className='allcon' key={index}>
-              <Typography sx={{position:"absolute",zIndex:"1999",fontFamily:"Montserrat, sans-serif",fontWeight:"600",bottom:"20%",paddingLeft:"2rem",color:"white"}} variant="h4">{item.name==="shadow of the tomb raider: definitive edition"?"shadow of the tomb raider":`${item.name}`}</Typography>
-              <Typography sx={{position:"absolute",zIndex:"1999",fontFamily:"Montserrat, sans-serif",fontWeight:"300",margin:"auto",bottom:"10%",paddingLeft:"2rem",color:"white"}} variant="h5">{item.price===0?"free":`RS ${item.price}`}</Typography>
-            <div  className="overcon">
-            <div className="overlay"></div>
-              <img src={item.imgv} />
+      // <Slider {...settings}>
+      //   {sliderData?.map((item, index) => {
+      //     return (
+      //       <Link to={`/game/${item._id}`} key={index} style={{ textDecoration: 'none' }}>
+      //       <div className='allcon' key={index}>
+      //         <Typography sx={{position:"absolute",zIndex:"1999",fontFamily:"Montserrat, sans-serif",fontWeight:"600",bottom:"20%",paddingLeft:"2rem",color:"white"}} variant="h4">{item.name==="shadow of the tomb raider: definitive edition"?"shadow of the tomb raider":`${item.name}`}</Typography>
+      //         <Typography sx={{position:"absolute",zIndex:"1999",fontFamily:"Montserrat, sans-serif",fontWeight:"300",margin:"auto",bottom:"10%",paddingLeft:"2rem",color:"white"}} variant="h5">{item.price===0?"free":`RS ${item.price}`}</Typography>
+      //       <div  className="overcon">
+      //       <div className="overlay"></div>
+      //         <img src={item.imgv} />
               
-            </div>
+      //       </div>
             
             
-            </div>
-            </Link>
-          )
-        })}
+      //       </div>
+      //       </Link>
+      //     )
+      //   })}
 
-      </Slider>}
+      // </Slider>}
+      ""}
     </div>
   )
 }
